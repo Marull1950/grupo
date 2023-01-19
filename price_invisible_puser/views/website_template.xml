@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="product_item_price_template" inherit_id="website_sale.products_item">
+        <xpath expr="//div[hasclass('product_price')]" position="attributes">
+            <attribute name="t-if">(not website.hide_price) or (website.hide_price and not user_id._is_public())
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="product_price_template" inherit_id="website_sale.product_price">
+        <xpath expr="//div[hasclass('product_price')]" position="attributes">
+            <attribute name="t-if">(not website.hide_price) or (website.hide_price and not user_id._is_public())
+            </attribute>
+        </xpath>
+    </template>
+</odoo>
