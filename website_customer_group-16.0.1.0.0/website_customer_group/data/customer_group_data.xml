@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+
+<odoo>
+    <data noupdate="1">
+        <record id="public_group" model="customer.group">
+            <field name="name">Public Group</field>
+        </record>
+
+        <record id="default_group" model="customer.group">
+            <field name="name">Default Group</field>
+        </record>
+
+        <record id="base.public_user" model="res.users">
+            <field name="customer_grp_id" ref='website_customer_group.public_group' />
+        </record>
+
+        <record id="base.template_portal_user_id" model="res.users">
+            <field name="customer_grp_id" ref='website_customer_group.default_group' />
+        </record>
+
+
+        <record id="website_sale.products_categories" model="ir.ui.view">
+                <field name="active" eval="True"/>
+        </record>
+
+    </data>
+</odoo>
